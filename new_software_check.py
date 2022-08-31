@@ -76,3 +76,14 @@ else:
         email.Subject = 'Atualizar SCCM'
         email.Body = f"""{len(new_version2)} Softwares foram atualizados!"""
         email.Send()
+        
+        
+import win32com.client as win32
+
+outlook = win32.Dispatch('outlook.application')
+email = outlook.CreateItem(0)
+email.To = 'teste@teste.com'
+email.Subject = 'Atualizar SCCM'
+email.Body = """teste"""
+email.Send()
+
